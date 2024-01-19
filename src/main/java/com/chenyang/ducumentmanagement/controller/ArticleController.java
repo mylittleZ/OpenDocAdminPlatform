@@ -1,29 +1,25 @@
 package com.chenyang.ducumentmanagement.controller;
 
+import com.chenyang.ducumentmanagement.pojo.Article;
 import com.chenyang.ducumentmanagement.pojo.Result;
+import com.chenyang.ducumentmanagement.service.ArticleService;
 import com.chenyang.ducumentmanagement.utils.JwtUtil;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
 @RestController
 @RequestMapping("/article")
 public class ArticleController {
-    @GetMapping("/list")
-    //从header中拿token
-    public Result<String> list(@RequestHeader(name = "Authorization") String token, HttpServletResponse response){
-        //verify token
-//        try {
-//            Map<String,Object> claims = JwtUtil.parseToken(token);
-//            return Result.success("list data");
-//        } catch (Exception e) {
-//            response.setStatus(401);
-//            return Result.error("Not Logged In");
-//        }
-        return Result.success("1111");
+
+    @Autowired
+    private ArticleService articleService;
+    @PostMapping()
+    public Result add(@RequestBody @Validated Article article){
+        articleService.add(article);
+        return Result.success();
     }
 }
