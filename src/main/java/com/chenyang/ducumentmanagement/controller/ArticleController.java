@@ -1,6 +1,7 @@
 package com.chenyang.ducumentmanagement.controller;
 
 import com.chenyang.ducumentmanagement.pojo.Article;
+import com.chenyang.ducumentmanagement.pojo.PageBean;
 import com.chenyang.ducumentmanagement.pojo.Result;
 import com.chenyang.ducumentmanagement.service.ArticleService;
 import com.chenyang.ducumentmanagement.utils.JwtUtil;
@@ -21,5 +22,11 @@ public class ArticleController {
     public Result add(@RequestBody @Validated Article article){
         articleService.add(article);
         return Result.success();
+    }
+
+    @GetMapping
+    public Result<PageBean<Article>> list(Integer pageNum,Integer pageSize,@RequestParam(required = false) Integer categoryId, @RequestParam(required = false) String state){
+        PageBean<Article> articlePageBean= articleService.list(pageNum,pageSize,categoryId,state);
+        return  Result.success(articlePageBean);
     }
 }
