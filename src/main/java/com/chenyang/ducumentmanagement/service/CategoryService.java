@@ -13,4 +13,6 @@ public interface CategoryService {
 
     //query category by id
     Category findById(Integer id);
+
+    void update(Category category);
 }

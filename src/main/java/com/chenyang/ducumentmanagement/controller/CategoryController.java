@@ -17,7 +17,7 @@ public class CategoryController {
 
     //new category
     @PostMapping
-    public Result add(@RequestBody @Validated Category category){
+    public Result add(@RequestBody @Validated(Category.Add.class) Category category){
         categoryService.add(category);
         return Result.success();
     }
@@ -33,6 +33,12 @@ public class CategoryController {
     public Result<Category> detail(Integer id){
         Category category = categoryService.findById(id);
         return Result.success(category);
+    }
+
+    @PutMapping
+    public Result update(@RequestBody @Validated(Category.Update.class) Category category){
+        categoryService.update(category);
+        return Result.success();
     }
 
 }
