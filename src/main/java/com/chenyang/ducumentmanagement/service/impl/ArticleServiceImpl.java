@@ -60,4 +60,9 @@ public class ArticleServiceImpl implements ArticleService {
         article.setCreateUser(userId);
         articleMapper.update(article);
     }
+
+    @Override
+    public Article findById(Integer id) {
+        return articleMapper.findById(id);
+    }
 }

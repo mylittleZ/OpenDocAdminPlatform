@@ -30,7 +30,7 @@ public class CategoryController {
     }
 
     @GetMapping("/detail")
-    public Result<Category> detail(Integer id){
+    public Result<Category> detail(@RequestParam Integer id){
         Category category = categoryService.findById(id);
         return Result.success(category);
     }

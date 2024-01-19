@@ -35,4 +35,10 @@ public class ArticleController {
         articleService.update(article);
         return Result.success();
     }
+
+    @GetMapping("/detail")
+    public Result<Article> detail(@RequestParam Integer id){
+        Article article = articleService.findById(id);
+        return Result.success(article);
+    }
 }
