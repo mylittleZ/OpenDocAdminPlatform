@@ -9,3 +9,10 @@ spring:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true #?????????????????
+
+
+aws:
+  region: us-east-1
+  s3:
+    buckets:
+      name: open-doc-admin-platform
