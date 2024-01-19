@@ -1,10 +1,7 @@
 package com.chenyang.ducumentmanagement.mapper;
 
 import com.chenyang.ducumentmanagement.pojo.Article;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -22,4 +19,7 @@ public interface ArticleMapper {
 
     @Select("select * from article where id=${id}")
     Article findById(Integer id);
+
+    @Delete("delete from article where id=#{id}")
+    void delete(Integer id);
 }
