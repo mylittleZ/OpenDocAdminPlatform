@@ -3,6 +3,7 @@ package com.chenyang.ducumentmanagement.mapper;
 import com.chenyang.ducumentmanagement.pojo.Article;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -13,4 +14,7 @@ public interface ArticleMapper {
     void add(Article article);
 
     List<Article> list(Integer userId, Integer categoryId, String state);
+
+    @Update("update article set title=#{title},category_id=#{categoryId},content=#{content},cover_img=#{coverImg},state=#{state} where id=#{id}")
+    void update(Article article);
 }

@@ -52,4 +52,12 @@ public class ArticleServiceImpl implements ArticleService {
         articlePageBean.setItems(page.getResult());
         return articlePageBean;
     }
+
+    @Override
+    public void update(Article article) {
+        Map<String,Object> map = ThreadLocalUtil.get();
+        Integer userId =(Integer) map.get("id");
+        article.setCreateUser(userId);
+        articleMapper.update(article);
+    }
 }

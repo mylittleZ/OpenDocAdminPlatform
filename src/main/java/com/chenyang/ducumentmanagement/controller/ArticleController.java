@@ -29,4 +29,10 @@ public class ArticleController {
         PageBean<Article> articlePageBean= articleService.list(pageNum,pageSize,categoryId,state);
         return  Result.success(articlePageBean);
     }
+
+    @PutMapping
+    public Result update(@RequestBody @Validated Article article){
+        articleService.update(article);
+        return Result.success();
+    }
 }
