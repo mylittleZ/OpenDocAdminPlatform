@@ -33,4 +33,9 @@ public class CategoryServiceImpl implements CategoryService {
         //query the list owned by the current user
         return categoryMapper.list(userId);
     }
+
+    @Override
+    public Category findById(Integer id) {
+        return categoryMapper.findById(id);
+    }
 }

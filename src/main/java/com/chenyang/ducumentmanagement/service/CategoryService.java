@@ -10,4 +10,7 @@ public interface CategoryService {
 
     //query category list
     List<Category> list();
+
+    //query category by id
+    Category findById(Integer id);
 }
