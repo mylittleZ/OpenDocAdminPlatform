@@ -1,7 +1,7 @@
 # OpenDocAdminPlatform
 
 ## Description
-OpenDocAdminPlatform is a comprehensive document management and user administration system built with Spring Boot. It integrates advanced functionalities like JWT-based user authentication, custom validation using the Validation framework, and data persistence with MyBatis and MySQL. The platform features user management with capabilities such as login logic, avatar updates with AWS S3 cloud storage, password renewal, and user information retrieval optimized with ThreadLocal. Additionally, it offers document categorization and management with CRUD operations, conditional pagination for document lists, and deployment support on AWS for scalable cloud hosting.
+OpenDocAdminPlatform is a comprehensive document management and user administration system built with **Spring Boot**. It integrates advanced functionalities like **JWT-based** user authentication, custom validation using the Validation framework, and data persistence with **MyBatis and MySQL**. The platform features user management with capabilities such as login logic, avatar updates with **AWS S3 cloud storage**, password renewal, and user information retrieval optimized with **ThreadLocal**. Additionally, it offers document categorization and management with CRUD operations, **conditional pagination** for document lists, and deployment support on **AWS Services** for scalable cloud hosting.
 
 ## Features
 - **User Authentication:** Secure login mechanism using JWT.
@@ -50,7 +50,7 @@ mvn spring-boot:run
 
 ## Usage
 
-To test the OpenDocAdminPlatform's functionalities with Postman, follow these steps:
+To test the OpenDocAdminPlatform's functionalities with **Postman**, follow these steps:
 
 1. **User Authentication:**
    -  Send a `POST` request to `/user/register` with the username and password in the body to create an account.
