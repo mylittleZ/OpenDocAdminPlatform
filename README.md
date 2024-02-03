@@ -81,5 +81,3 @@ To test the OpenDocAdminPlatform's functionalities with **Postman**, follow thes
 Ensure that each request has the correct headers and body format as required by the API endpoints. The JWT token must be included in the header for all authenticated requests.
 
 
----
-
